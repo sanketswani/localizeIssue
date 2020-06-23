@@ -1,0 +1,38 @@
+[
+    {
+        "label": "DEE",
+        "route": "unit",
+        "icon": "D"
+    },
+    {
+        "label": "FCC",
+        "route": "unit",
+        "icon": "F"
+    },
+    {
+        "label": "RR",
+        "route": "unit",
+        "icon": "R"
+    },
+    {
+        "label": "All Units",
+        "route": "unit",
+        "icon": "A"
+    },
+    {
+        "label": "Historic Failure Data",
+        "route": "heatmap",
+        "icon": "./assets/HeatmapIcon.svg"
+       
+    },
+    {
+        "label": "Ontology Visualizer",
+        "route": "ontology",
+        "icon": "./assets/OntologyIcon.svg"
+    },
+    {
+        "label": "Analyser Reports",
+        "route": "documents/AnalyserReports",
+        "icon":  "./assets/AnalyserIcon.svg"
+    }
+]

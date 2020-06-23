@@ -1,0 +1,176 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "FMEA": {
+      "i18n": {
+        "locales": {
+          "EN": {
+            "translation": "src/translate/messages.en.xlf",
+            "baseHref": ""
+          },
+          "FR": {
+            "translation": "src/translate/messages.fr.xlf",
+            "baseHref": ""
+          }
+        }
+      },
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/FMEA",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+            ],
+            "scripts": [
+              "src/assets/js/searchPhrase.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": false,
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ]
+            },
+            "EN": {
+              "aot": true,
+              "outputPath": "dist",
+              "i18nFile": "src/translate/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "EN",
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "i18nMissingTranslation": "error",
+              "localize": [
+                "EN"
+              ]
+            },
+            "FR": {
+              "aot": true,
+              "outputPath": "dist/FR",
+              "i18nFile": "src/translate/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "FR",
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "i18nMissingTranslation": "error",
+              "localize": [
+                "FR"
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "FMEA:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "FMEA:build:production"
+            },
+            "EN": {
+              "browserTarget": "FMEA:build:EN"
+            },
+            "FR": {
+              "browserTarget": "FMEA:build:FR"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "FMEA:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "sourceMap": true,
+            "styles": [
+            ],
+            "scripts": [
+              "src/assets/js/searchPhrase.js"
+            ],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "FMEA:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "FMEA:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "FMEA",
+  "cli": {
+    "analytics": "e4e2b604-565f-4d21-8627-bbd154674448"
+  }
+}

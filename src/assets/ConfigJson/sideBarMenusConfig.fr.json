@@ -1,0 +1,37 @@
+[
+    {
+        "label": "DEE",
+        "route": "unit",
+        "icon": "D"
+    },
+    {
+        "label": "FCC",
+        "route": "unit",
+        "icon": "F"
+    },
+    {
+        "label": "RR",
+        "route": "unit",
+        "icon": "R"
+    },
+    {
+        "label": "Toutes unités",
+        "route": "unit",
+        "icon": "A"
+    },
+    {
+        "label": "Historiques détections",
+        "route": "heatmap",
+        "icon": "./assets/HeatmapIcon.svg"
+    },
+    {
+        "label": "Affichage ontologie",
+        "route": "ontology",
+        "icon": "./assets/OntologyIcon.svg"
+    },
+    {
+        "label": "Rapport analyse",
+        "route": "documents/AnalyserReports",
+        "icon":  "./assets/AnalyserIcon.svg"
+    }
+]
